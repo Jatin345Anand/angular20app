@@ -1,0 +1,20 @@
+<div class="row pt-2">
+    <div class="col-12 text-center">
+        <button class="btn btn-danger" value="hide" (click)="toggleVisibility($event)">Hide</button>
+        <button class="btn btn-success" value="show" (click)="toggleVisibility($event)">Show</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        @if (isVisible) {
+        <div class="bg-success p-3">
+            Div1
+        </div>
+
+        }
+
+    </div>
+    <div [@fadeInOut]="isVisible ? 'visible' : 'hidden'" class="my-box">
+  This is a fading div!
+</div>
+</div>
