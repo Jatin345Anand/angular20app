@@ -1,9 +1,3 @@
-<div class="row pt-2">
-    <div class="col-12 text-center">
-        <button class="btn btn-danger" value="hide" (click)="toggleVisibility($event)">Hide</button>
-        <button class="btn btn-success" value="show" (click)="toggleVisibility($event)">Show</button>
-    </div>
-</div>
 <div class="row">
     <div class="col-12">
         @if (isVisible) {
@@ -12,9 +6,39 @@
         </div>
 
         }
+        @else if (isShow3) {
+        <div class="bg-success p-3">
+            Div3
+        </div>
+        }
+        @else if (isShow4) {
+        <div class="bg-success p-3">
+            Div4
+        </div>
+        }
 
     </div>
     <div [@fadeInOut]="isVisible ? 'visible' : 'hidden'" class="my-box">
-  This is a fading div!
+        This is a fading div!
+    </div>
+
+
 </div>
+<hr>
+<h2>Ng Class</h2>
+<div class="col-12" [ngClass]="currentClass" style="width: 100px; height: 50px;">
+
+</div>
+<h2>Ng Style</h2>
+<div class="col-12" [ngStyle]="{'background-color':currentColor}" style="width: 100px; height: 50px;">
+
+</div>
+
+<div class="row pt-2">
+    <div class="col-12 text-center">
+        <button class="btn btn-danger" value="hide" (click)="toggleVisibility($event)">Hide</button>
+        <button class="btn btn-success" value="show" (click)="toggleVisibility($event)">Show</button>
+        <button class="btn btn-success" value="3" (click)="toggleVisibility($event)">Div3</button>
+        <button class="btn btn-success" value="4" (click)="toggleVisibility($event)">Div4</button>
+    </div>
 </div>
